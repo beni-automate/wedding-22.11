@@ -105,13 +105,13 @@
             gap: 10px;
         }
 
-        /* טיימר הפוך (צד שני) */
+        /* טיימר מתוקן מימין לשמאל: ימים, שעות, דקות, שניות */
         .countdown-container {
             display: flex;
             justify-content: center;
             gap: 12px;
             margin: 20px 0;
-            direction: ltr;
+            direction: rtl;
         }
         .countdown-box {
             background: var(--gold-light);
@@ -120,7 +120,6 @@
             padding: 10px 8px;
             min-width: 65px;
             text-align: center;
-            direction: rtl;
         }
         .countdown-number {
             font-size: 1.3rem;
@@ -251,23 +250,23 @@
             <p>📍 <strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
         </div>
 
-        <!-- טיימר לאחור ממוקם הפוך בצד השני -->
+        <!-- טיימר מימין לשמאל: ימים, שעות, דקות, שניות -->
         <div class="countdown-container">
             <div class="countdown-box">
-                <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">שניות</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">דקות</span>
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">ימים</span>
             </div>
             <div class="countdown-box">
                 <span class="countdown-number" id="hours">00</span>
                 <span class="countdown-label">שעות</span>
             </div>
             <div class="countdown-box">
-                <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">ימים</span>
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">דקות</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">שניות</span>
             </div>
         </div>
 
@@ -279,7 +278,8 @@
             </div>
         </div>
 
-        <a href="https://waze.com/ul?q=%D7%A8%D7%95%D7%AA%D7%9D%201%20%D7%A8%D7%9B%D7%A1%D7%99%D7%9D&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
+        <!-- קישור ישיר לאפליקציית Waze -->
+        <a href="waze://?q=%D7%A8%D7%95%D7%AA%D7%9D%201%20%D7%A8%D7%9B%D7%A1%D7%99%D7%9D&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
 
         <div class="divider-flowers" style="margin-top: 25px;">🌸 ❀ 🌸</div>
 
@@ -340,3 +340,4 @@
     </script>
 </body>
 </html>
+
