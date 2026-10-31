@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>הזמנה לחתונה - חזקיהו רפאל & רבקה אפרת</title>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- טעינת פונטים מעוצבים: Assistant לטקסט רגיל, Caveat ו-Tangerine לשמות החתן והכלה -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Tangerine:wght@700&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #f7f9f6 0%, #ebf2eb 100%);
-            --primary: #2d4a3e;
-            --accent: #5c7866;
+            --bg-gradient: radial-gradient(circle at center, #fbfdfa 0%, #e3ede3 100%);
+            --primary: #1f382e;
+            --accent: #4a6655;
             --text: #2b332e;
-            --card-bg: #ffffff;
-            --border: #dce4dd;
-            --gold: #c5a059;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --border: #d4dfd5;
+            --gold: #b89243;
+            --gold-light: #f5eedc;
         }
         body {
             font-family: 'Assistant', sans-serif;
             background: var(--bg-gradient);
             color: var(--text);
             margin: 0;
-            padding: 20px;
+            padding: 25px 15px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,57 +30,76 @@
         }
         .invitation-card {
             background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 45px 30px;
-            max-width: 500px;
+            border: 2px solid var(--gold);
+            outline: 6px solid rgba(184, 146, 67, 0.15);
+            border-radius: 28px;
+            padding: 45px 25px;
+            max-width: 480px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(45, 74, 62, 0.08);
+            box-shadow: 0 20px 40px rgba(31, 56, 46, 0.12);
             position: relative;
             overflow: hidden;
+            box-sizing: border-box;
         }
         
-        /* עיטורי פרחים בצדדים */
+        /* פיזור אלמנטים פרחוניים עשירים */
         .floral-decor {
             position: absolute;
-            font-size: 2.2rem;
-            opacity: 0.35;
+            font-size: 2.4rem;
+            opacity: 0.45;
             user-select: none;
             pointer-events: none;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
         }
-        .floral-top-left { top: 12px; left: 15px; transform: rotate(-45deg); }
-        .floral-top-right { top: 12px; right: 15px; transform: rotate(45deg); }
-        .floral-bottom-left { bottom: 12px; left: 15px; transform: rotate(-135deg); }
-        .floral-bottom-right { bottom: 12px; right: 15px; transform: rotate(135deg); }
+        .floral-top-left { top: 10px; left: 12px; transform: rotate(-30deg); }
+        .floral-top-right { top: 10px; right: 12px; transform: rotate(30deg); }
+        .floral-mid-left { top: 40%; left: -10px; transform: rotate(-90deg); font-size: 1.8rem; opacity: 0.3; }
+        .floral-mid-right { top: 40%; right: -10px; transform: rotate(90deg); font-size: 1.8rem; opacity: 0.3; }
+        .floral-bottom-left { bottom: 10px; left: 12px; transform: rotate(-150deg); }
+        .floral-bottom-right { bottom: 10px; right: 12px; transform: rotate(150deg); }
+
+        .divider-flowers {
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            opacity: 0.6;
+            margin: 10px 0;
+            user-select: none;
+        }
 
         .bismillah {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--gold);
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        h1 { 
-            color: var(--primary); 
-            font-size: 2.4rem; 
-            margin: 5px 0 10px 0; 
+            letter-spacing: 3px;
+            margin-bottom: 8px;
             font-weight: 700;
         }
-        .subtitle { 
-            font-size: 1.25rem; 
-            color: var(--accent); 
-            margin-bottom: 25px; 
-            font-weight: 400; 
+
+        /* שמות החתן והכלה בכתב מעוגל קליגרפי */
+        .couple-names { 
+            color: var(--primary); 
+            font-size: 2.5rem; 
+            margin: 8px 0; 
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
+
+        .subtitle { 
+            font-size: 1.2rem; 
+            color: var(--accent); 
+            margin-bottom: 20px; 
+            font-weight: 600; 
+        }
+
         .details-box {
-            background: #f9fbf9;
+            background: linear-gradient(180deg, #ffffff 0%, #f4f8f4 100%);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 22px 20px;
-            margin-bottom: 20px;
+            border-radius: 18px;
+            padding: 20px;
+            margin: 20px 0;
             text-align: right;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
         }
         .details-box p { 
             margin: 10px 0; 
@@ -88,17 +109,22 @@
             gap: 10px;
         }
 
-        /* שמות ההורים למטה */
-        .parents-section {
-            margin: 15px 0 25px 0;
-            padding-top: 15px;
-            border-top: 1px solid #f0f4f0;
-            font-size: 1rem;
-            color: var(--accent);
-            line-height: 1.6;
+        /* שמות ההורים - מוגדר בדיוק לפי הדרישה */
+        .parents-container {
+            background-color: var(--gold-light);
+            border: 1px solid rgba(184, 146, 67, 0.3);
+            border-radius: 14px;
+            padding: 12px 15px;
+            margin: 20px 0;
+            font-size: 1.05rem;
+            color: var(--primary);
+            line-height: 1.7;
         }
-        .parents-section div {
-            margin: 4px 0;
+        .parents-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .btn {
@@ -115,7 +141,7 @@
             box-sizing: border-box;
             transition: all 0.3s ease;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(45, 74, 62, 0.15);
+            box-shadow: 0 4px 15px rgba(31, 56, 46, 0.2);
         }
         .btn:hover { 
             background-color: var(--accent); 
@@ -123,13 +149,14 @@
         }
         .btn-waze {
             background-color: #33cc66;
-            box-shadow: 0 4px 15px rgba(51, 204, 102, 0.2);
+            box-shadow: 0 4px 15px rgba(51, 204, 102, 0.25);
         }
         .btn-waze:hover {
             background-color: #2eb85c;
         }
+
         form {
-            margin-top: 30px;
+            margin-top: 25px;
             text-align: right;
             border-top: 2px dashed var(--border);
             padding-top: 25px;
@@ -138,13 +165,13 @@
             color: var(--primary); 
             margin-top: 0; 
             text-align: center; 
-            margin-bottom: 20px; 
+            margin-bottom: 15px; 
             font-size: 1.35rem;
         }
         input, select {
             width: 100%;
             padding: 13px 15px;
-            margin: 6px 0 18px 0;
+            margin: 6px 0 16px 0;
             border: 1px solid var(--border);
             border-radius: 12px;
             box-sizing: border-box;
@@ -157,7 +184,7 @@
             outline: none;
             border-color: var(--primary);
             background: #fff;
-            box-shadow: 0 0 0 3px rgba(45, 74, 62, 0.1);
+            box-shadow: 0 0 0 3px rgba(31, 56, 46, 0.1);
         }
         label { 
             font-weight: 600; 
@@ -168,15 +195,21 @@
 </head>
 <body>
     <div class="invitation-card">
-        <!-- אלמנטים של פרחים בצדדים -->
+        <!-- עיטורי פרחים מסביב -->
         <div class="floral-decor floral-top-left">🌿🌸</div>
         <div class="floral-decor floral-top-right">🌸🌿</div>
+        <div class="floral-decor floral-mid-left">🍃🌺</div>
+        <div class="floral-decor floral-mid-right">🌺🍃</div>
         <div class="floral-decor floral-bottom-left">🌿🌸</div>
         <div class="floral-decor floral-bottom-right">🌸🌿</div>
 
         <div class="bismillah">בסיעתא דשמייא</div>
+        
+        <div class="divider-flowers">❀ 🌿 ❀</div>
 
-        <h1>חזקיהו רפאל & רבקה אפרת</h1>
+        <!-- שמות החתן והכלה -->
+        <h1 class="couple-names">חזקיהו רפאל <br>&<br> רבקה אפרת</h1>
+        
         <div class="subtitle">מתרגשים להזמינכם לחתונתנו</div>
         
         <div class="details-box">
@@ -186,16 +219,21 @@
             <p>📍 <strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
         </div>
 
-        <!-- שמות ההורים למטה -->
-        <div class="parents-section">
-            <div><strong>הורים חתן:</strong> צבי שנהב ורעייתו</div>
-            <div><strong>הורים כלה:</strong> אבנר עובדיה ורעייתו</div>
+        <!-- אזור שמות ההורים -->
+        <div class="parents-container">
+            <div class="parents-row">
+                <div><strong>הורי החתן:</strong> צבי שנהב ורעייתו</div>
+                <div>•</div>
+                <div><strong>הורי הכלה:</strong> אבנר עובדיה ורעייתו</div>
+            </div>
         </div>
 
-        <!-- כפתור ניווט ישיר לאפליקציית Waze -->
+        <!-- כפתור ניווט Waze -->
         <a href="waze://?q=Kollel%20Simcha%20Rechasim&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
 
-        <!-- טופס אישור הגעה עם הקישור החדש מהתמונה -->
+        <div class="divider-flowers" style="margin-top: 25px;">🌸 ❀ 🌸</div>
+
+        <!-- טופס אישור הגעה -->
         <form action="https://formspree.io/f/xoeekepk" method="POST">
             <h3>אישור הגעה (RSVP)</h3>
             
