@@ -7,16 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f4f7f4;
+            --bg-gradient: linear-gradient(135deg, #f4f7f4 0%, #e5ede5 100%);
             --primary: #2d4a3e;
             --accent: #5c7866;
             --text: #2b332e;
             --card-bg: #ffffff;
             --border: #dce4dd;
+            --gold: #c5a059;
         }
         body {
             font-family: 'Assistant', sans-serif;
-            background-color: var(--bg-color);
+            background: var(--bg-gradient);
             color: var(--text);
             margin: 0;
             padding: 20px;
@@ -28,50 +29,115 @@
         .invitation-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 40px 30px;
+            border-radius: 24px;
+            padding: 45px 30px;
             max-width: 500px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(45, 74, 62, 0.08);
         }
-        h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 5px; }
-        .subtitle { font-size: 1.2rem; color: var(--accent); margin-bottom: 25px; }
+        .bismillah {
+            font-size: 1rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        h1 { 
+            color: var(--primary); 
+            font-size: 2.6rem; 
+            margin: 0 0 10px 0; 
+            font-weight: 700;
+        }
+        .subtitle { 
+            font-size: 1.25rem; 
+            color: var(--accent); 
+            margin-bottom: 30px; 
+            font-weight: 400; 
+        }
         .details-box {
             background: #f9fbf9;
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 25px 20px;
             margin-bottom: 25px;
+            text-align: right;
         }
-        .details-box p { margin: 10px 0; font-size: 1.1rem; }
+        .details-box p { 
+            margin: 12px 0; 
+            font-size: 1.15rem; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
         .btn {
-            display: inline-block;
+            display: block;
+            width: 100%;
             background-color: var(--primary);
             color: white;
             text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 14px 0;
+            border-radius: 35px;
             font-weight: 600;
-            margin-top: 10px;
-            transition: background 0.3s;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(45, 74, 62, 0.2);
         }
-        .btn:hover { background-color: var(--accent); }
-        form { margin-top: 25px; text-align: right; border-top: 1px solid var(--border); padding-top: 20px; }
+        .btn:hover { 
+            background-color: var(--accent); 
+            transform: translateY(-2px);
+        }
+        .btn-waze {
+            background-color: #33cc66;
+            box-shadow: 0 4px 15px rgba(51, 204, 102, 0.2);
+        }
+        .btn-waze:hover {
+            background-color: #2eb85c;
+        }
+        form {
+            margin-top: 35px;
+            text-align: right;
+            border-top: 2px dashed var(--border);
+            padding-top: 30px;
+        }
+        form h3 { 
+            color: var(--primary); 
+            margin-top: 0; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-size: 1.4rem;
+        }
         input, select {
             width: 100%;
-            padding: 10px;
-            margin: 8px 0 15px 0;
+            padding: 13px 15px;
+            margin: 6px 0 20px 0;
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 12px;
             box-sizing: border-box;
             font-family: 'Assistant', sans-serif;
+            font-size: 1.05rem;
+            background: #fafcf9;
+            transition: border-color 0.3s;
         }
-        label { font-weight: 600; font-size: 0.95rem; }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(45, 74, 62, 0.1);
+        }
+        label { 
+            font-weight: 600; 
+            font-size: 1rem; 
+            color: var(--primary); 
+        }
     </style>
 </head>
 <body>
     <div class="invitation-card">
+        <div class="bismillah">בסיעתא דשמيا</div>
         <h1>רפאל & אפרת</h1>
         <div class="subtitle">מתרגשים להזמינכם לחתונתנו</div>
         
@@ -82,10 +148,12 @@
             <p>📍 <strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
         </div>
 
-        <a href="https://waze.com/ul?q=Kollel%20Simcha%20Rechasim" target="_blank" class="btn">ניווט בוויז 🚗</a>
+        <!-- כפתור ניווט ישיר לאפליקציית Waze -->
+        <a href="waze://?q=Kollel%20Simcha%20Rechasim&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
 
-        <form action="https://formspree.io/f/zvikaes@gmail.com" method="POST">
+        <form action="https://formspree.io/f/xcekepk" method="POST">
             <h3>אישור הגעה (RSVP)</h3>
+            
             <label>שם מלא:</label>
             <input type="text" name="name" required placeholder="הכנס שם מלא">
             
@@ -95,10 +163,12 @@
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="5">5+</option>
             </select>
 
-            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">שליחת אישור הגעה</button>
+            <button type="submit" class="btn" style="border: none; cursor: pointer;">שליחת אישור הגעה 💌</button>
         </form>
     </div>
 </body>
 </html>
+
