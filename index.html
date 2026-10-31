@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הזמנה לחתונה - רפאל ואפרת</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>הזמנה לחתונה - רפאל & אפרת</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f7f9f6;
+            --bg-color: #f4f7f4;
             --primary: #2d4a3e;
             --accent: #5c7866;
             --text: #2b332e;
@@ -30,22 +28,77 @@
         .invitation-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 20px;
+            padding: 40px 30px;
             max-width: 500px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        h1 { color: var(--primary); margin-bottom: 10px; }
-        p { font-size: 1.1rem; line-height: 1.6; }
+        h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 5px; }
+        .subtitle { font-size: 1.2rem; color: var(--accent); margin-bottom: 25px; }
+        .details-box {
+            background: #f9fbf9;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .details-box p { margin: 10px 0; font-size: 1.1rem; }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn:hover { background-color: var(--accent); }
+        form { margin-top: 25px; text-align: right; border-top: 1px solid var(--border); padding-top: 20px; }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: 'Assistant', sans-serif;
+        }
+        label { font-weight: 600; font-size: 0.95rem; }
     </style>
 </head>
 <body>
     <div class="invitation-card">
         <h1>רפאל & אפרת</h1>
-        <p>מתרגשים להזמינכם לחתונה שתתקיים ביום ראשון, י"ב בכסלו תשפ"ז (22.11.2026)</p>
-        <p><strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
+        <div class="subtitle">מתרגשים להזמינכם לחתונתנו</div>
+        
+        <div class="details-box">
+            <p>📅 <strong>יום ראשון, י"ב בכסלו תשפ"ז</strong></p>
+            <p>🗓️ 22.11.2026</p>
+            <p>🕖 <strong>חופה וקידושין:</strong> 18:00</p>
+            <p>📍 <strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
+        </div>
+
+        <a href="https://waze.com/ul?q=Kollel%20Simcha%20Rechasim" target="_blank" class="btn">ניווט בוויז 🚗</a>
+
+        <form action="https://formspree.io/f/zvikaes@gmail.com" method="POST">
+            <h3>אישור הגעה (RSVP)</h3>
+            <label>שם מלא:</label>
+            <input type="text" name="name" required placeholder="הכנס שם מלא">
+            
+            <label>מספר מגיעים:</label>
+            <select name="guests">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">שליחת אישור הגעה</button>
+        </form>
     </div>
 </body>
 </html>
