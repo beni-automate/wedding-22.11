@@ -42,7 +42,6 @@
             box-sizing: border-box;
         }
         
-        /* עיטורי פרחים מסביב */
         .floral-decor {
             position: absolute;
             font-size: 2.4rem;
@@ -106,12 +105,13 @@
             gap: 10px;
         }
 
-        /* עיצוב טיימר עד החתונה */
+        /* טיימר הפוך (צד שני) */
         .countdown-container {
             display: flex;
             justify-content: center;
             gap: 12px;
             margin: 20px 0;
+            direction: ltr;
         }
         .countdown-box {
             background: var(--gold-light);
@@ -120,6 +120,7 @@
             padding: 10px 8px;
             min-width: 65px;
             text-align: center;
+            direction: rtl;
         }
         .countdown-number {
             font-size: 1.3rem;
@@ -133,7 +134,6 @@
             font-weight: 600;
         }
 
-        /* אזור שמות ההורים */
         .parents-container {
             background-color: var(--gold-light);
             border: 1px solid rgba(184, 146, 67, 0.3);
@@ -248,27 +248,26 @@
             <p>📅 <strong>יום ראשון, י"ב בכסלו תשפ"ז</strong></p>
             <p>🗓️ 22.11.2026</p>
             <p>🕖 <strong>חופה וקידושין:</strong> 18:00</p>
-            <p>🍷 <strong>ברכת המזון:</strong> 22:00 (עשר בערב)</p>
             <p>📍 <strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
         </div>
 
-        <!-- טיימר לאחור עד החופה -->
+        <!-- טיימר לאחור ממוקם הפוך בצד השני -->
         <div class="countdown-container">
             <div class="countdown-box">
-                <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">ימים</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number" id="hours">00</span>
-                <span class="countdown-label">שעות</span>
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">שניות</span>
             </div>
             <div class="countdown-box">
                 <span class="countdown-number" id="minutes">00</span>
                 <span class="countdown-label">דקות</span>
             </div>
             <div class="countdown-box">
-                <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">שניות</span>
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">שעות</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">ימים</span>
             </div>
         </div>
 
@@ -280,7 +279,7 @@
             </div>
         </div>
 
-        <a href="waze://?q=Kollel%20Simcha%20Rechasim&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
+        <a href="https://waze.com/ul?q=%D7%A8%D7%95%D7%AA%D7%9D%201%20%D7%A8%D7%9B%D7%A1%D7%99%D7%9D&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
 
         <div class="divider-flowers" style="margin-top: 25px;">🌸 ❀ 🌸</div>
 
@@ -310,7 +309,6 @@
         </form>
     </div>
 
-    <!-- סקריפט לפעולת הטיימר -->
     <script>
         const weddingDate = new Date("November 22, 2026 18:00:00").getTime();
 
@@ -342,4 +340,3 @@
     </script>
 </body>
 </html>
-
