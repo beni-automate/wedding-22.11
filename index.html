@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #f4f7f4 0%, #e5ede5 100%);
+            --bg-gradient: linear-gradient(135deg, #f7f9f6 0%, #ebf2eb 100%);
             --primary: #2d4a3e;
             --accent: #5c7866;
             --text: #2b332e;
@@ -35,37 +35,66 @@
             width: 100%;
             text-align: center;
             box-shadow: 0 15px 35px rgba(45, 74, 62, 0.08);
+            position: relative;
+            overflow: hidden;
         }
+        
+        /* עיטורי פרחים בצדדים */
+        .floral-decor {
+            position: absolute;
+            font-size: 2.2rem;
+            opacity: 0.35;
+            user-select: none;
+            pointer-events: none;
+        }
+        .floral-top-left { top: 12px; left: 15px; transform: rotate(-45deg); }
+        .floral-top-right { top: 12px; right: 15px; transform: rotate(45deg); }
+        .floral-bottom-left { bottom: 12px; left: 15px; transform: rotate(-135deg); }
+        .floral-bottom-right { bottom: 12px; right: 15px; transform: rotate(135deg); }
+
         .bismillah {
             font-size: 1rem;
             color: var(--gold);
             letter-spacing: 2px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 600;
         }
+
+        .parents-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 15px 0 20px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f4f0;
+            font-size: 1.05rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
         h1 { 
             color: var(--primary); 
-            font-size: 2.6rem; 
-            margin: 0 0 10px 0; 
+            font-size: 2.7rem; 
+            margin: 5px 0 10px 0; 
             font-weight: 700;
         }
         .subtitle { 
             font-size: 1.25rem; 
             color: var(--accent); 
-            margin-bottom: 30px; 
+            margin-bottom: 25px; 
             font-weight: 400; 
         }
         .details-box {
             background: #f9fbf9;
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 25px 20px;
+            padding: 22px 20px;
             margin-bottom: 25px;
             text-align: right;
         }
         .details-box p { 
-            margin: 12px 0; 
-            font-size: 1.15rem; 
+            margin: 10px 0; 
+            font-size: 1.1rem; 
             display: flex;
             align-items: center;
             gap: 10px;
@@ -84,7 +113,7 @@
             box-sizing: border-box;
             transition: all 0.3s ease;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(45, 74, 62, 0.2);
+            box-shadow: 0 4px 15px rgba(45, 74, 62, 0.15);
         }
         .btn:hover { 
             background-color: var(--accent); 
@@ -98,22 +127,22 @@
             background-color: #2eb85c;
         }
         form {
-            margin-top: 35px;
+            margin-top: 30px;
             text-align: right;
             border-top: 2px dashed var(--border);
-            padding-top: 30px;
+            padding-top: 25px;
         }
         form h3 { 
             color: var(--primary); 
             margin-top: 0; 
             text-align: center; 
             margin-bottom: 20px; 
-            font-size: 1.4rem;
+            font-size: 1.35rem;
         }
         input, select {
             width: 100%;
             padding: 13px 15px;
-            margin: 6px 0 20px 0;
+            margin: 6px 0 18px 0;
             border: 1px solid var(--border);
             border-radius: 12px;
             box-sizing: border-box;
@@ -137,7 +166,21 @@
 </head>
 <body>
     <div class="invitation-card">
-        <div class="bismillah">בסיעתא דשמيا</div>
+        <!-- אלמנטים של פרחים בצדדים -->
+        <div class="floral-decor floral-top-left">🌿🌸</div>
+        <div class="floral-decor floral-top-right">🌸🌿</div>
+        <div class="floral-decor floral-bottom-left">🌿🌸</div>
+        <div class="floral-decor floral-bottom-right">🌸🌿</div>
+
+        <div class="bismillah">בסיעתא דשמייא</div>
+        
+        <!-- שמות ההורים -->
+        <div class="parents-section">
+            <div>צבי שנהב ורעייתו</div>
+            <div>•</div>
+            <div>אבנר עובדיה ורעייתו</div>
+        </div>
+
         <h1>רפאל & אפרת</h1>
         <div class="subtitle">מתרגשים להזמינכם לחתונתנו</div>
         
