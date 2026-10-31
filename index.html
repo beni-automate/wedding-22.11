@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>הזמנה לחתונה - חזקיהו רפאל & רבקה אפרת</title>
-    <!-- טעינת פונטים מעוצבים: Assistant לטקסט רגיל, Caveat ו-Tangerine לשמות החתן והכלה -->
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Tangerine:wght@700&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-gradient: radial-gradient(circle at center, #fbfdfa 0%, #e3ede3 100%);
@@ -43,7 +42,7 @@
             box-sizing: border-box;
         }
         
-        /* פיזור אלמנטים פרחוניים עשירים */
+        /* עיטורי פרחים מסביב */
         .floral-decor {
             position: absolute;
             font-size: 2.4rem;
@@ -75,14 +74,12 @@
             font-weight: 700;
         }
 
-        /* שמות החתן והכלה בכתב מעוגל קליגרפי */
         .couple-names { 
             color: var(--primary); 
-            font-size: 2.5rem; 
+            font-size: 2.3rem; 
             margin: 8px 0; 
             font-weight: 700;
             line-height: 1.2;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
 
         .subtitle { 
@@ -109,14 +106,41 @@
             gap: 10px;
         }
 
-        /* שמות ההורים - מוגדר בדיוק לפי הדרישה */
+        /* עיצוב טיימר עד החתונה */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .countdown-box {
+            background: var(--gold-light);
+            border: 1px solid rgba(184, 146, 67, 0.3);
+            border-radius: 12px;
+            padding: 10px 8px;
+            min-width: 65px;
+            text-align: center;
+        }
+        .countdown-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        .countdown-label {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* אזור שמות ההורים */
         .parents-container {
             background-color: var(--gold-light);
             border: 1px solid rgba(184, 146, 67, 0.3);
             border-radius: 14px;
             padding: 12px 15px;
             margin: 20px 0;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--primary);
             line-height: 1.7;
         }
@@ -168,9 +192,9 @@
             margin-bottom: 15px; 
             font-size: 1.35rem;
         }
-        input, select {
+        input, select, textarea {
             width: 100%;
-            padding: 13px 15px;
+            padding: 12px 15px;
             margin: 6px 0 16px 0;
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -180,7 +204,7 @@
             background: #fafcf9;
             transition: border-color 0.3s;
         }
-        input:focus, select:focus {
+        input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--primary);
             background: #fff;
@@ -188,14 +212,24 @@
         }
         label { 
             font-weight: 600; 
-            font-size: 1rem; 
+            font-size: 0.95rem; 
             color: var(--primary); 
+            display: flex;
+            justify-content: space-between;
+        }
+        label span.optional {
+            font-weight: 300;
+            color: #777;
+            font-size: 0.85rem;
+        }
+        textarea {
+            resize: vertical;
+            height: 80px;
         }
     </style>
 </head>
 <body>
     <div class="invitation-card">
-        <!-- עיטורי פרחים מסביב -->
         <div class="floral-decor floral-top-left">🌿🌸</div>
         <div class="floral-decor floral-top-right">🌸🌿</div>
         <div class="floral-decor floral-mid-left">🍃🌺</div>
@@ -207,19 +241,37 @@
         
         <div class="divider-flowers">❀ 🌿 ❀</div>
 
-        <!-- שמות החתן והכלה -->
         <h1 class="couple-names">חזקיהו רפאל <br>&<br> רבקה אפרת</h1>
-        
         <div class="subtitle">מתרגשים להזמינכם לחתונתנו</div>
         
         <div class="details-box">
             <p>📅 <strong>יום ראשון, י"ב בכסלו תשפ"ז</strong></p>
             <p>🗓️ 22.11.2026</p>
             <p>🕖 <strong>חופה וקידושין:</strong> 18:00</p>
+            <p>🍷 <strong>ברכת המזון:</strong> 22:00 (עשר בערב)</p>
             <p>📍 <strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
         </div>
 
-        <!-- אזור שמות ההורים -->
+        <!-- טיימר לאחור עד החופה -->
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">ימים</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">שעות</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">דקות</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">שניות</span>
+            </div>
+        </div>
+
         <div class="parents-container">
             <div class="parents-row">
                 <div><strong>הורי החתן:</strong> צבי שנהב ורעייתו</div>
@@ -228,18 +280,20 @@
             </div>
         </div>
 
-        <!-- כפתור ניווט Waze -->
         <a href="waze://?q=Kollel%20Simcha%20Rechasim&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
 
         <div class="divider-flowers" style="margin-top: 25px;">🌸 ❀ 🌸</div>
 
         <!-- טופס אישור הגעה -->
-        <form action="https://formspree.io/f/xoeekepk" method="POST">
+        <form action="https://formspree.io/f/xcekepk" method="POST">
             <h3>אישור הגעה (RSVP)</h3>
             
             <label>שם מלא:</label>
             <input type="text" name="name" required placeholder="הכנס שם מלא">
             
+            <label>מספר טלפון: <span class="optional">(לא חובה)</span></label>
+            <input type="tel" name="phone" placeholder="לדוגמה: 050-0000000">
+
             <label>מספר מגיעים:</label>
             <select name="guests">
                 <option value="1">1</option>
@@ -249,9 +303,43 @@
                 <option value="5">5+</option>
             </select>
 
+            <label>הערות / ברכה: <span class="optional">(לא חובה)</span></label>
+            <textarea name="notes" placeholder="הכנס הערות או ברכה חמה..."></textarea>
+
             <button type="submit" class="btn" style="border: none; cursor: pointer;">שליחת אישור הגעה 💌</button>
         </form>
     </div>
+
+    <!-- סקריפט לפעולת הטיימר -->
+    <script>
+        const weddingDate = new Date("November 22, 2026 18:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
 
