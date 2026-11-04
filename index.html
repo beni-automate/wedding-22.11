@@ -21,9 +21,8 @@
             background: var(--bg-gradient);
             color: var(--text);
             margin: 0;
-            padding: 40px 20px 20px 20px;
+            padding: 40px 20px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -35,7 +34,7 @@
             outline: 6px solid rgba(184, 146, 67, 0.15);
             border-radius: 28px;
             padding: 55px 45px;
-            max-width: 750px;
+            max-width: 750px; /* רוחב מוגדל ומרשים למחשב */
             width: 100%;
             text-align: center;
             box-shadow: 0 20px 45px rgba(31, 56, 46, 0.12);
@@ -44,7 +43,7 @@
             box-sizing: border-box;
         }
         
-        /* עיטורי פרחים */
+        /* עיטורי פרחים עשירים */
         .floral-decor {
             position: absolute;
             font-size: 2.8rem;
@@ -78,7 +77,7 @@
 
         .couple-names { 
             color: var(--primary); 
-            font-size: 3.2rem; 
+            font-size: 3.2rem; /* גופן מוגדל למחשב */
             margin: 12px 0; 
             font-weight: 700;
             line-height: 1.25;
@@ -110,7 +109,7 @@
             gap: 12px;
         }
 
-        /* טיימר (שניות -> דקות -> שעות -> ימים) */
+        /* טיימר מורחב (שניות -> דקות -> שעות -> ימים) */
         .countdown-container {
             display: flex;
             justify-content: center;
@@ -234,28 +233,10 @@
             height: 90px;
         }
 
-        /* עיצוב פוטר הקרדיט בתחתית העמוד */
-        .footer-credit {
-            margin-top: 25px;
-            font-size: 0.9rem;
-            color: var(--accent);
-            opacity: 0.85;
-            text-align: center;
-            direction: ltr;
-        }
-        .footer-credit a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .footer-credit a:hover {
-            text-decoration: underline;
-        }
-
         /* התאמה למובייל */
         @media (max-width: 768px) {
             body {
-                padding: 15px 10px 15px 10px;
+                padding: 15px 10px;
             }
             .invitation-card {
                 padding: 35px 20px;
@@ -359,11 +340,6 @@
         </form>
     </div>
 
-    <!-- קרדיט בתחתית העמוד -->
-    <div class="footer-credit">
-        נבנה ע"י <a href="mailto:beni.automate@gmail.com">beni.automate@gmail.com</a>
-    </div>
-
     <script>
         const weddingDate = new Date("November 22, 2026 18:00:00").getTime();
 
@@ -395,3 +371,4 @@
     </script>
 </body>
 </html>
+
