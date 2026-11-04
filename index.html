@@ -11,7 +11,7 @@
             --primary: #1f382e;
             --accent: #4a6655;
             --text: #2b332e;
-            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-bg: rgba(255, 255, 255, 0.96);
             --border: #d4dfd5;
             --gold: #b89243;
             --gold-light: #f5eedc;
@@ -21,41 +21,43 @@
             background: var(--bg-gradient);
             color: var(--text);
             margin: 0;
-            padding: 25px 15px;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            box-sizing: border-box;
         }
         .invitation-card {
             background: var(--card-bg);
             border: 2px solid var(--gold);
             outline: 6px solid rgba(184, 146, 67, 0.15);
             border-radius: 28px;
-            padding: 45px 25px;
-            max-width: 480px;
+            padding: 50px 40px;
+            max-width: 950px; /* רוחב מורחב למחשב */
             width: 100%;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(31, 56, 46, 0.12);
+            box-shadow: 0 20px 45px rgba(31, 56, 46, 0.12);
             position: relative;
             overflow: hidden;
             box-sizing: border-box;
         }
         
+        /* עיטורי פרחים */
         .floral-decor {
             position: absolute;
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             opacity: 0.45;
             user-select: none;
             pointer-events: none;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
         }
-        .floral-top-left { top: 10px; left: 12px; transform: rotate(-30deg); }
-        .floral-top-right { top: 10px; right: 12px; transform: rotate(30deg); }
-        .floral-mid-left { top: 40%; left: -10px; transform: rotate(-90deg); font-size: 1.8rem; opacity: 0.3; }
-        .floral-mid-right { top: 40%; right: -10px; transform: rotate(90deg); font-size: 1.8rem; opacity: 0.3; }
-        .floral-bottom-left { bottom: 10px; left: 12px; transform: rotate(-150deg); }
-        .floral-bottom-right { bottom: 10px; right: 12px; transform: rotate(150deg); }
+        .floral-top-left { top: 15px; left: 15px; transform: rotate(-30deg); }
+        .floral-top-right { top: 15px; right: 15px; transform: rotate(30deg); }
+        .floral-mid-left { top: 45%; left: -10px; transform: rotate(-90deg); font-size: 2rem; opacity: 0.3; }
+        .floral-mid-right { top: 45%; right: -10px; transform: rotate(90deg); font-size: 2rem; opacity: 0.3; }
+        .floral-bottom-left { bottom: 15px; left: 15px; transform: rotate(-150deg); }
+        .floral-bottom-right { bottom: 15px; right: 15px; transform: rotate(150deg); }
 
         .divider-flowers {
             font-size: 1.4rem;
@@ -66,7 +68,7 @@
         }
 
         .bismillah {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             color: var(--gold);
             letter-spacing: 3px;
             margin-bottom: 8px;
@@ -75,37 +77,46 @@
 
         .couple-names { 
             color: var(--primary); 
-            font-size: 2.3rem; 
-            margin: 8px 0; 
+            font-size: 2.8rem; 
+            margin: 10px 0; 
             font-weight: 700;
             line-height: 1.2;
         }
 
         .subtitle { 
-            font-size: 1.2rem; 
+            font-size: 1.35rem; 
             color: var(--accent); 
-            margin-bottom: 20px; 
+            margin-bottom: 25px; 
             font-weight: 600; 
+        }
+
+        /* חלוקה לרשת/גריד עבור מסכי מחשב */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: start;
+            margin-top: 25px;
         }
 
         .details-box {
             background: linear-gradient(180deg, #ffffff 0%, #f4f8f4 100%);
             border: 1px solid var(--border);
             border-radius: 18px;
-            padding: 20px;
-            margin: 20px 0;
+            padding: 22px;
+            margin-bottom: 20px;
             text-align: right;
             box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
         }
         .details-box p { 
-            margin: 10px 0; 
-            font-size: 1.1rem; 
+            margin: 12px 0; 
+            font-size: 1.15rem; 
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* סדר הטיימר (מימין לשמאל: שניות -> דקות -> שעות -> ימים) */
+        /* טיימר (מימין לשמאל: שניות -> דקות -> שעות -> ימים) */
         .countdown-container {
             display: flex;
             justify-content: center;
@@ -116,19 +127,19 @@
         .countdown-box {
             background: var(--gold-light);
             border: 1px solid rgba(184, 146, 67, 0.3);
-            border-radius: 12px;
-            padding: 10px 8px;
-            min-width: 65px;
+            border-radius: 14px;
+            padding: 12px 10px;
+            min-width: 70px;
             text-align: center;
         }
         .countdown-number {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--primary);
             display: block;
         }
         .countdown-label {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--accent);
             font-weight: 600;
         }
@@ -137,9 +148,9 @@
             background-color: var(--gold-light);
             border: 1px solid rgba(184, 146, 67, 0.3);
             border-radius: 14px;
-            padding: 12px 15px;
+            padding: 14px 18px;
             margin: 20px 0;
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--primary);
             line-height: 1.7;
         }
@@ -179,17 +190,18 @@
         }
 
         form {
-            margin-top: 25px;
             text-align: right;
-            border-top: 2px dashed var(--border);
-            padding-top: 25px;
+            background: #fafcf9;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 25px;
         }
         form h3 { 
             color: var(--primary); 
             margin-top: 0; 
             text-align: center; 
-            margin-bottom: 15px; 
-            font-size: 1.35rem;
+            margin-bottom: 18px; 
+            font-size: 1.4rem;
         }
         input, select, textarea {
             width: 100%;
@@ -200,7 +212,7 @@
             box-sizing: border-box;
             font-family: 'Assistant', sans-serif;
             font-size: 1.05rem;
-            background: #fafcf9;
+            background: #ffffff;
             transition: border-color 0.3s;
         }
         input:focus, select:focus, textarea:focus {
@@ -223,7 +235,31 @@
         }
         textarea {
             resize: vertical;
-            height: 80px;
+            height: 85px;
+        }
+
+        /* התאמה מיוחדת למובייל (מסכים קטנים מ-768 פיקסלים) */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+            .invitation-card {
+                padding: 35px 20px;
+            }
+            .content-grid {
+                grid-template-columns: 1fr; /* טור יחיד במובייל */
+                gap: 20px;
+            }
+            .couple-names {
+                font-size: 2.2rem;
+            }
+            form {
+                background: transparent;
+                border: none;
+                border-top: 2px dashed var(--border);
+                border-radius: 0;
+                padding: 20px 0 0 0;
+            }
         }
     </style>
 </head>
@@ -237,76 +273,82 @@
         <div class="floral-decor floral-bottom-right">🌸🌿</div>
 
         <div class="bismillah">בסיעתא דשמייא</div>
-        
         <div class="divider-flowers">❀ 🌿 ❀</div>
 
         <h1 class="couple-names">חזקיהו רפאל <br>&<br> רבקה אפרת</h1>
         <div class="subtitle">מתרגשים להזמינכם לחתונתנו</div>
-        
-        <div class="details-box">
-            <p>📅 <strong>יום ראשון, י"ב בכסלו תשפ"ז</strong></p>
-            <p>🗓️ 22.11.2026</p>
-            <p>🕖 <strong>חופה וקידושין:</strong> 18:00</p>
-            <p>📍 <strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
-        </div>
 
-        <!-- טיימר מעודכן: שניות -> דקות -> שעות -> ימים (מימין לשמאל) -->
-        <div class="countdown-container">
-            <div class="countdown-box">
-                <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">שניות</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">דקות</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number" id="hours">00</span>
-                <span class="countdown-label">שעות</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">ימים</span>
-            </div>
-        </div>
-
-        <div class="parents-container">
-            <div class="parents-row">
-                <div><strong>הורי החתן:</strong> צבי שנהב ורעייתו</div>
-                <div>•</div>
-                <div><strong>הורי הכלה:</strong> אבנר עובדיה ורעייתו</div>
-            </div>
-        </div>
-
-        <!-- קישור ישיר לאפליקציית Waze -->
-        <a href="waze://?q=%D7%A8%D7%95%D7%AA%D7%9D%201%20%D7%A8%D7%9B%D7%A1%D7%99%D7%9D&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
-
-        <div class="divider-flowers" style="margin-top: 25px;">🌸 ❀ 🌸</div>
-
-        <!-- טופס אישור הגעה -->
-        <form action="https://formspree.io/f/xcekepk" method="POST">
-            <h3>אישור הגעה (RSVP)</h3>
+        <!-- חלוקה לרשת שתואמת מחשב וסמארטפון -->
+        <div class="content-grid">
             
-            <label>שם מלא:</label>
-            <input type="text" name="name" required placeholder="הכנס שם מלא">
-            
-            <label>מספר טלפון: <span class="optional">(לא חובה)</span></label>
-            <input type="tel" name="phone" placeholder="לדוגמה: 050-0000000">
+            <!-- עמודה ימנית: פרטים, טיימר, הורים וניווט -->
+            <div class="info-section">
+                <div class="details-box">
+                    <p>📅 <strong>יום ראשון, י"ב בכסלו תשפ"ז</strong></p>
+                    <p>🗓️ 22.11.2026</p>
+                    <p>🕖 <strong>חופה וקידושין:</strong> 18:00</p>
+                    <p>📍 <strong>אולם "קול שמחה", רותם 1, רכסים</strong></p>
+                </div>
 
-            <label>מספר מגיעים:</label>
-            <select name="guests">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5+</option>
-            </select>
+                <!-- טיימר (שניות -> דקות -> שעות -> ימים) -->
+                <div class="countdown-container">
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">שניות</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">דקות</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">שעות</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">ימים</span>
+                    </div>
+                </div>
 
-            <label>הערות / ברכה: <span class="optional">(לא חובה)</span></label>
-            <textarea name="notes" placeholder="הכנס הערות או ברכה חמה..."></textarea>
+                <div class="parents-container">
+                    <div class="parents-row">
+                        <div><strong>הורי החתן:</strong> צבי שנהב ורעייתו</div>
+                        <div>•</div>
+                        <div><strong>הורי הכלה:</strong> אבנר עובדיה ורעייתו</div>
+                    </div>
+                </div>
 
-            <button type="submit" class="btn" style="border: none; cursor: pointer;">שליחת אישור הגעה 💌</button>
-        </form>
+                <a href="waze://?q=%D7%A8%D7%95%D7%AA%D7%9D%201%20%D7%A8%D7%9B%D7%A1%D7%99%D7%9D&navigate=yes" class="btn btn-waze">ניווט ישיר באפליקציית Waze 🚗</a>
+            </div>
+
+            <!-- עמודה שמאלית: טופס אישור הגעה -->
+            <div class="form-section">
+                <form action="https://formspree.io/f/xcekepk" method="POST">
+                    <h3>אישור הגעה (RSVP)</h3>
+                    
+                    <label>שם מלא:</label>
+                    <input type="text" name="name" required placeholder="הכנס שם מלא">
+                    
+                    <label>מספר טלפון: <span class="optional">(לא חובה)</span></label>
+                    <input type="tel" name="phone" placeholder="לדוגמה: 050-0000000">
+
+                    <label>מספר מגיעים:</label>
+                    <select name="guests">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+
+                    <label>הערות / ברכה: <span class="optional">(לא חובה)</span></label>
+                    <textarea name="notes" placeholder="הכנס הערות או ברכה חמה..."></textarea>
+
+                    <button type="submit" class="btn" style="border: none; cursor: pointer;">שליחת אישור הגעה 💌</button>
+                </form>
+            </div>
+
+        </div>
     </div>
 
     <script>
